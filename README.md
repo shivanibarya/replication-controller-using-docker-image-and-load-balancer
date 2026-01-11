@@ -61,7 +61,7 @@ Image mkdir ~/rc-demo
 
 <body>
   
- <h1>Replication Controller Working 🚀</h1>
+ <h1>Replication Controller Working </h1>
 
 </body>
 
