@@ -12,7 +12,8 @@ sudo yum update -y
 sudo amazon-linux-extras install docker -y 
 
 sudo systemctl start docker 
- 
+ <img width="1013" height="570" alt="image" src="https://github.com/user-attachments/assets/bcbeb56a-cb1e-4d83-aeae-24686fa66a2b" />
+
 sudo systemctl enable docker
 
 sudo usermod -aG docker ec2-user 
@@ -44,6 +45,7 @@ kubectl get nodes
 1.Build Docker
 
 Image mkdir ~/rc-demo
+<img width="1013" height="496" alt="image" src="https://github.com/user-attachments/assets/afd6999c-9505-4ec0-ab91-3e300923e927" />
   
  cd ~/rc-demo
 
@@ -70,6 +72,7 @@ Dockerfile:
  FROM nginx:latest
  
  COPY index.html /usr/share/nginx/html/index.html
+ <img width="1013" height="570" alt="image" src="https://github.com/user-attachments/assets/0f80e0b1-f153-4421-a612-6e756a027896" />
 
 docker build -t shivanibarya/rc-demo:v1 . 
 
@@ -80,6 +83,7 @@ Open in browser: http://<EC2-PUBLIC-IP>:8080
 1.	Push Docker Image to Docker
  
 docker login docker push shivanibarya/rc-demo:v1
+<img width="943" height="570" alt="image" src="https://github.com/user-attachments/assets/91f1261d-8c3b-452a-8b13-addf5a3e3709" />
 
 1.	Deploy ReplicationController
 rc.yaml:
@@ -137,12 +141,16 @@ selector:
     ports: - port: 80 
     
      targetPort: 80
+<img width="1013" height="570" alt="image" src="https://github.com/user-attachments/assets/03b51812-7831-46d9-b542-963afb0b6b67" />
 
  
 kubectl apply -f service.yaml kubectl get svc
- 
+<img width="1013" height="570" alt="image" src="https://github.com/user-attachments/assets/6a33c627-4ba9-49b4-9d2e-6b4869f52c4f" />
+
 
 Example EXTERNAL-IP: a7236d1948f70406caa6862704d4c4ca-1911316458.us-m east-1.elb.amazonaws.com
+
+<img width="1013" height="570" alt="image" src="https://github.com/user-attachments/assets/feeb786f-e199-44c3-9efd-a169bb0f30d7" />
 
 1.	Access Your App
 
@@ -152,4 +160,7 @@ EXTERNAL-IP output-
   
 Example: 44.222.49.240, 54.146.213.171
 Browser: http://44.222.49.240 http://54.146.213.171 You will see: Replication Controller Working 
+<img width="1013" height="518" alt="image" src="https://github.com/user-attachments/assets/6bc30644-5134-4024-95ec-ecbe52ae9177" />
+
+
 
